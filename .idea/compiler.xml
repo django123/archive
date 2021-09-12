@@ -7,15 +7,41 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="archives" />
+        <module name="archive-app" />
+        <module name="archive-repositories" />
+        <module name="archive-helpers" />
+        <module name="archive-enums" />
+        <module name="archive-security" />
+        <module name="archive-domain" />
+        <module name="archive-service" />
+        <module name="archive-services" />
+        <module name="archive-controllers" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="archive-app" target="1.8" />
+      <module name="archive-controllers" target="1.8" />
+      <module name="archive-domain" target="1.8" />
+      <module name="archive-enums" target="1.8" />
+      <module name="archive-helpers" target="1.8" />
+      <module name="archive-repositories" target="1.8" />
+      <module name="archive-security" target="1.8" />
+      <module name="archive-service" target="1.8" />
+      <module name="archive-services" target="1.8" />
       <module name="archives" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="archive-app" options="-parameters" />
+      <module name="archive-controllers" options="-parameters" />
+      <module name="archive-domain" options="-parameters" />
+      <module name="archive-enums" options="-parameters" />
+      <module name="archive-helpers" options="-parameters" />
+      <module name="archive-repositories" options="-parameters" />
+      <module name="archive-security" options="-parameters" />
+      <module name="archive-service" options="-parameters" />
+      <module name="archive-services" options="-parameters" />
       <module name="archives" options="-parameters" />
     </option>
   </component>

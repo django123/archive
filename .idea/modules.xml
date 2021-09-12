@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/archive-app/archive-app.iml" filepath="$PROJECT_DIR$/archive-app/archive-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/archive-controllers/archive-controllers.iml" filepath="$PROJECT_DIR$/archive-controllers/archive-controllers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/archive-domain/archive-domain.iml" filepath="$PROJECT_DIR$/archive-domain/archive-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/archive-enums/archive-enums.iml" filepath="$PROJECT_DIR$/archive-enums/archive-enums.iml" />
+      <module fileurl="file://$PROJECT_DIR$/archive-helpers/archive-helpers.iml" filepath="$PROJECT_DIR$/archive-helpers/archive-helpers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/archive-repositories/archive-repositories.iml" filepath="$PROJECT_DIR$/archive-repositories/archive-repositories.iml" />
+      <module fileurl="file://$PROJECT_DIR$/archive-security/archive-security.iml" filepath="$PROJECT_DIR$/archive-security/archive-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/archive-service/archive-service.iml" filepath="$PROJECT_DIR$/archive-service/archive-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/archives.iml" filepath="$PROJECT_DIR$/archives.iml" />
     </modules>
   </component>

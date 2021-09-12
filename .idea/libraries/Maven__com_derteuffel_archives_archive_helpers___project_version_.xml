@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.derteuffel.archives:archive-helpers:${project-version}">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/derteuffel/archives/archive-helpers/${project-version}/archive-helpers-${project-version}.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/derteuffel/archives/archive-helpers/${project-version}/archive-helpers-${project-version}-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/derteuffel/archives/archive-helpers/${project-version}/archive-helpers-${project-version}-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

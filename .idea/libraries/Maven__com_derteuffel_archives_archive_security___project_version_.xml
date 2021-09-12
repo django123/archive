@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.derteuffel.archives:archive-security:${project-version}">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/derteuffel/archives/archive-security/${project-version}/archive-security-${project-version}.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/derteuffel/archives/archive-security/${project-version}/archive-security-${project-version}-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/derteuffel/archives/archive-security/${project-version}/archive-security-${project-version}-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
