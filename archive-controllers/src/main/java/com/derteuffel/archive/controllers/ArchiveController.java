@@ -13,6 +13,7 @@ import com.derteuffel.archive.services.CompteService;
 import com.derteuffel.archive.services.Multipart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -27,8 +28,9 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/archives")
+@CrossOrigin(origins = "*")
 public class ArchiveController {
     @Autowired
     private CompteService compteService;
@@ -43,7 +45,10 @@ public class ArchiveController {
     @Autowired
     private Multipart multipart;
 
+    private final
+
     CountryDetails countryDetails = new CountryDetails();
+
 
     @GetMapping("/home")
     public String home(Model model, HttpServletRequest request){

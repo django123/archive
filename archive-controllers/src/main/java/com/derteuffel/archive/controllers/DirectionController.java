@@ -4,21 +4,23 @@ package com.derteuffel.archive.controllers;
 import com.derteuffel.archive.domain.Compte;
 import com.derteuffel.archive.domain.Direction;
 import com.derteuffel.archive.helpers.CountryDetails;
+import com.derteuffel.archive.helpers.exceptions.HttpServiceExceptionHandle;
+import com.derteuffel.archive.helpers.utils.HttpErrorCodes;
+import com.derteuffel.archive.helpers.utils.HttpErrorMessage;
 import com.derteuffel.archive.services.CompteService;
 import com.derteuffel.archive.services.DirectionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
+import java.util.Date;
 
-@Controller
+@RestController
 @RequestMapping("/direction")
+@CrossOrigin(origins = "*")
 public class DirectionController {
 
     @Autowired
@@ -29,72 +31,77 @@ public class DirectionController {
 
     CountryDetails countryDetails = new CountryDetails();
 
+    @GetMapping("/lists")
+    public ResponseEntity<?> getDirections(HttpServletRequest request){
+        try{
+            Principal principal = request.getUserPrincipal();
+            Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
+            return new ResponseEntity<>(directionService.findAll(), HttpStatus.OK);
+        }catch (HttpServiceExceptionHandle e) {
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
+        }
 
-    @PostMapping("/save")
-    public String save(Direction direction) {
-        directionService.save(direction);
-
-        return "redirect:/direction/lists";
     }
 
-    @GetMapping("/update/{id}")
-    public String addUpdate(Model model, @PathVariable Long id, HttpServletRequest request) {
-        Principal principal = request.getUserPrincipal();
-        Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
-        Direction direction = directionService.getOne(id);
-        model.addAttribute("compte",compte);
-        model.addAttribute("direction", direction);
-        model.addAttribute("villes",countryDetails.getVilles());
-        model.addAttribute("regions", countryDetails.getRegions());
-        return "direction/update";
+
+    @PostMapping("/create")
+    public ResponseEntity<?>createDirection(@RequestBody Direction direction){
+        try {
+
+            if(direction == null) throw  new HttpServiceExceptionHandle("Contenue vide !!", HttpErrorCodes.BAD_FORMAT_DATA);
+            return new ResponseEntity<>(directionService.save(direction), HttpStatus.OK);
+
+        }catch (HttpServiceExceptionHandle e) {
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
+        }
+
     }
 
-    @PostMapping("/update/{id}")
-    public String update(Direction direction, @PathVariable Long id) {
-        directionService.update(direction, id);
-        return "redirect:/direction/detail/"+id;
-    }
+    /** modifier un direction  **/
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?>updateDirection(@RequestBody Direction direction,@PathVariable Long id){
+        try {
 
-    @GetMapping("/detail/{id}")
-    public String getOne(@PathVariable Long id, HttpServletRequest request, Model model) {
-        Principal principal = request.getUserPrincipal();
-        Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
-        Direction direction = directionService.getOne(id);
-        model.addAttribute("compte",compte);
-        model.addAttribute("direction", direction);
-        return "direction/detail";
-    }
+            if(direction == null) throw  new HttpServiceExceptionHandle("Contenue vide !!", HttpErrorCodes.BAD_FORMAT_DATA);
+            return new ResponseEntity<>(directionService.update(direction, id), HttpStatus.OK);
 
+        }catch (HttpServiceExceptionHandle e) {
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
+        }
+    }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable Long id) {
-        directionService.delete(id);
-        return "redirect:/direction/lists";
+    public ResponseEntity<?> deleteDirection(HttpServletRequest request, @PathVariable Long id){
+        try{
+            return new ResponseEntity<> (directionService.delete(id), HttpStatus.OK);
+        }catch (HttpServiceExceptionHandle e) {
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
+        }
+
     }
 
-    @GetMapping("/lists")
-    public String findAll(HttpServletRequest request, Model model) {
-        Principal principal = request.getUserPrincipal();
-        Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
-        model.addAttribute("compte", compte);
-        model.addAttribute("lists",directionService.findAll());
-        model.addAttribute("direction",new Direction());
-        model.addAttribute("villes",countryDetails.getVilles());
-        model.addAttribute("regions", countryDetails.getRegions());
-        return "direction/lists";
+    @GetMapping("/get/{id}")
+    public ResponseEntity<?>  getDirection(HttpServletRequest request,@PathVariable("id") Long id){
+        try{
+            Principal principal = request.getUserPrincipal();
+            Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
+            return new ResponseEntity<>(directionService.getOne(id), HttpStatus.OK);
+        }catch (HttpServiceExceptionHandle e) {
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
+        }
+
+
     }
-
-
 
     @GetMapping("/ville/lists/{ville}")
-    public String findAllByVille(@PathVariable String ville, Model model, HttpServletRequest request) {
-        Principal principal = request.getUserPrincipal();
-        Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
-        model.addAttribute("compte", compte);
-        model.addAttribute("lists",directionService.findAllByVille(ville));
-        model.addAttribute("direction",new Direction());
-        model.addAttribute("villes",countryDetails.getVilles());
-        model.addAttribute("regions", countryDetails.getRegions());
-        return "direction/lists";
+    public ResponseEntity<?>findAllByVille(@PathVariable String ville, HttpServletRequest request){
+        try{
+            Principal principal = request.getUserPrincipal();
+            Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
+            return new ResponseEntity<>(directionService.findAllByVille(ville), HttpStatus.OK);
+        }catch (HttpServiceExceptionHandle e) {
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
+        }
     }
+
 }

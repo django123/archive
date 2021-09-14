@@ -23,12 +23,14 @@
       <module name="archive-controllers" target="1.8" />
       <module name="archive-domain" target="1.8" />
       <module name="archive-enums" target="1.8" />
+      <module name="archive-exceptions" target="1.8" />
       <module name="archive-helpers" target="1.8" />
       <module name="archive-repositories" target="1.8" />
       <module name="archive-security" target="1.8" />
       <module name="archive-service" target="1.8" />
       <module name="archive-services" target="1.8" />
       <module name="archives" target="1.8" />
+      <module name="exceptions" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -37,12 +39,14 @@
       <module name="archive-controllers" options="-parameters" />
       <module name="archive-domain" options="-parameters" />
       <module name="archive-enums" options="-parameters" />
+      <module name="archive-exceptions" options="-parameters" />
       <module name="archive-helpers" options="-parameters" />
       <module name="archive-repositories" options="-parameters" />
       <module name="archive-security" options="-parameters" />
       <module name="archive-service" options="-parameters" />
       <module name="archive-services" options="-parameters" />
       <module name="archives" options="-parameters" />
+      <module name="exceptions" options="-parameters" />
     </option>
   </component>
 </project>

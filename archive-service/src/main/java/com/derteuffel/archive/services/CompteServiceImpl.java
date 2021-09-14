@@ -5,6 +5,8 @@ import com.derteuffel.archive.domain.Role;
 import com.derteuffel.archive.domain.Secteur;
 import com.derteuffel.archive.domain.User;
 import com.derteuffel.archive.helpers.UserDto;
+import com.derteuffel.archive.helpers.exceptions.HttpServiceExceptionHandle;
+import com.derteuffel.archive.helpers.utils.HttpErrorCodes;
 import com.derteuffel.archive.repositories.CompteRepository;
 import com.derteuffel.archive.repositories.RoleRepository;
 import com.derteuffel.archive.repositories.SecteurRepository;
@@ -16,13 +18,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityNotFoundException;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional(rollbackFor = {HttpServiceExceptionHandle.class, SQLException.class }, noRollbackFor = EntityNotFoundException.class)
 public class CompteServiceImpl implements CompteService {
 
     @Autowired
@@ -86,12 +92,25 @@ public class CompteServiceImpl implements CompteService {
 
     @Override
     public List<Compte> findAllBySecteur(Long id) {
-        return compteRepository.findAllBySecteur_IdOrderByIdDesc(id);
+
+        try{
+            return compteRepository.findAllBySecteur_IdOrderByIdDesc(id);
+        }catch (HttpServiceExceptionHandle e) {
+            HttpErrorCodes code = (e.getErrorCode() != null ? HttpErrorCodes.fromId(e.getErrorCode()) : HttpErrorCodes.INTERNAL_SERVER_ERROR);
+            throw new HttpServiceExceptionHandle(e.getMessage(),code);
+        }
+
     }
 
     @Override
     public List<Compte> findAllByDIrection(Long id) {
-        return compteRepository.findAllByDirection_IdOrderByIdDesc(id);
+        try{
+            return compteRepository.findAllByDirection_IdOrderByIdDesc(id);
+
+        }catch (HttpServiceExceptionHandle e) {
+            HttpErrorCodes code = (e.getErrorCode() != null ? HttpErrorCodes.fromId(e.getErrorCode()) : HttpErrorCodes.INTERNAL_SERVER_ERROR);
+            throw new HttpServiceExceptionHandle(e.getMessage(),code);
+        }
     }
 
     @Override
