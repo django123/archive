@@ -22,11 +22,94 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0785ea71-09ff-4bd0-972d-f8c20ec23e45" name="Default Changelist" comment="mise en place des exception revue des service et de api restfull et suppression de certain fichiers">
+    <list default="true" id="0785ea71-09ff-4bd0-972d-f8c20ec23e45" name="Default Changelist" comment="api coté ArchiveController">
+      <change afterPath="$PROJECT_DIR$/archive-controllers/src/main/java/com/derteuffel/archive/controllers/FileUploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive-helpers/src/main/java/com/derteuffel/archive/helpers/FileStorageProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive-helpers/src/main/java/com/derteuffel/archive/helpers/FileUploadHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive-helpers/src/main/java/com/derteuffel/archive/helpers/exceptions/FileStorageException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive-helpers/src/main/java/com/derteuffel/archive/helpers/exceptions/MyFileNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive-service/src/main/java/com/derteuffel/archive/services/FileStorageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-controllers/src/main/java/com/derteuffel/archive/controllers/ArchiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/archive-controllers/src/main/java/com/derteuffel/archive/controllers/ArchiveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-app/target/classes/com/derteuffel/archives/ArchiveApplication.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/archive-controllers/src/main/java/com/derteuffel/archive/controllers/SecteurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/archive-controllers/src/main/java/com/derteuffel/archive/controllers/SecteurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-security/src/main/java/com/derteuffel/archive/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/archive-security/src/main/java/com/derteuffel/archive/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-controllers/target/classes/META-INF/archive-controllers.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-controllers/target/classes/com/derteuffel/archive/controllers/ArchiveController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-controllers/target/classes/com/derteuffel/archive/controllers/DirectionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-controllers/target/classes/com/derteuffel/archive/controllers/SecteurController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/AbstractPersistence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/Archive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/Compte.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/Direction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/Secteur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-enums/target/classes/com/derteuffel/archive/enums/EAgeDocument.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-enums/target/classes/com/derteuffel/archive/enums/ENatureDocument.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-enums/target/classes/com/derteuffel/archive/enums/ERole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/CountryDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/UserDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/ApiError$ApiSubError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/ApiError$ApiValidationError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/ApiError.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/AppExceptionsHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/EntityNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/HttpServiceExceptionHandle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/LowerCaseClassNameResolver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/MyExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/RestExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/utils/HttpErrorCodes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/utils/HttpErrorMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-repositories/target/classes/com/derteuffel/archive/repositories/ArchiveRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-repositories/target/classes/com/derteuffel/archive/repositories/CompteRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-repositories/target/classes/com/derteuffel/archive/repositories/DirectionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-repositories/target/classes/com/derteuffel/archive/repositories/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-repositories/target/classes/com/derteuffel/archive/repositories/SecteurRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-repositories/target/classes/com/derteuffel/archive/repositories/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-security/target/classes/com/derteuffel/archive/security/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-security/target/classes/com/derteuffel/archive/security/WebConfig$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-security/target/classes/com/derteuffel/archive/security/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/CompteService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/CompteServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/DirectionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/DirectionServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/Multipart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/SecteurService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/SecteurServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/ArchivesApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/controllers/ArchiveController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/controllers/DirectionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/controllers/HomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/controllers/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/controllers/SecteurController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/controllers/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/entities/Archive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/entities/Compte.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/entities/Direction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/entities/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/entities/Secteur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/entities/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/enums/EAgeDocument.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/enums/ENatureDocument.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/enums/ERole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/helpers/CountryDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/helpers/UserDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/repositories/ArchiveRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/repositories/CompteRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/repositories/DirectionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/repositories/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/repositories/SecteurRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/repositories/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/security/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/security/WebConfig$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/security/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/CompteService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/CompteServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/DirectionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/DirectionServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/Multipart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/SecteurService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/SecteurServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/derteuffel/archives/ArchivesApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +246,7 @@
       <workItem from="1631632744663" duration="875000" />
       <workItem from="1631638289007" duration="139000" />
       <workItem from="1631641411952" duration="6644000" />
-      <workItem from="1631996671970" duration="1548000" />
+      <workItem from="1631996671970" duration="3350000" />
     </task>
     <task id="LOCAL-00001" summary="adding user manae in">
       <created>1629820836676</created>
@@ -193,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631650572138</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="api coté ArchiveController">
+      <created>1631998321660</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1631998321660</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +306,8 @@
     <MESSAGE value="order list of cities in alphabetic orders" />
     <MESSAGE value="decoupage en module" />
     <MESSAGE value="mise en place des exception revue des service et de api restfull et suppression de certain fichiers" />
-    <option name="LAST_COMMIT_MESSAGE" value="mise en place des exception revue des service et de api restfull et suppression de certain fichiers" />
+    <MESSAGE value="api coté ArchiveController" />
+    <option name="LAST_COMMIT_MESSAGE" value="api coté ArchiveController" />
   </component>
   <component name="WindowStateProjectService">
     <state x="354" y="109" key="#Inspections" timestamp="1631465659050">
@@ -297,6 +388,10 @@
     <state x="320" y="165" key="Vcs.Push.Dialog.v2/0.25.1440.805@0.25.1440.805" timestamp="1631467375652" />
     <state x="320" y="165" key="Vcs.Push.Dialog.v2/0.25.1440.806@0.25.1440.806" timestamp="1631650576510" />
     <state x="320" y="166" key="Vcs.Push.Dialog.v2/0.25.1440.808@0.25.1440.808" timestamp="1630061230499" />
+    <state x="404" y="188" width="632" height="476" key="find.popup" timestamp="1631999062593">
+      <screen x="0" y="25" width="1440" height="808" />
+    </state>
+    <state x="404" y="188" width="632" height="476" key="find.popup/0.25.1440.808@0.25.1440.808" timestamp="1631999062593" />
     <state x="0" y="91" key="new project wizard" timestamp="1631630860005">
       <screen x="0" y="25" width="1440" height="813" />
     </state>

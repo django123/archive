@@ -119,9 +119,6 @@ public class SecteurController {
 
 
 
-
-
-
     @GetMapping("/detail/{id}")
     public ResponseEntity<?> getOne(@PathVariable Long id, HttpServletRequest request, Model model) {
         try{
