@@ -77,51 +77,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 );
     }
 
-   /* @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                .antMatcher("/**").authorizeRequests()
-                .antMatchers("/archives/registration/**","/downloadFile/**").permitAll()
-                .antMatchers("/archives/**","/direction**","/secteur**").access("hasAnyRole('ROLE_ROOT')")
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/archives/login")
-                .loginProcessingUrl("/archives/login/process")
-                .defaultSuccessUrl("/archives/home")
-                .permitAll()
-                .and()
-                .logout()
-                .invalidateHttpSession(true)
-                .clearAuthentication(true)
-                .logoutRequestMatcher(new AntPathRequestMatcher("/archives/logout"))
-                .logoutSuccessUrl("/archives/login?logout")
-                .and()
-                .exceptionHandling().accessDeniedPage("/archive/access-denied");
-    }
 
-
-
-    @Autowired
-    private DaoAuthenticationProvider authenticationProvider;
-
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
-    @Autowired
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authenticationProvider);
-    }
-
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web
-                .ignoring()
-                .antMatchers("/js/**",
-                        "/css/**",
-                        "/images/**",
-                        "/vendor/**",
-                        "/downloadFile/**",
-                        "/fonts**",
-                        "/static/**"
-                );
-    }*/
 }

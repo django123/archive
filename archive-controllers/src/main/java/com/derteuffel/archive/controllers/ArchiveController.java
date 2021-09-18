@@ -5,6 +5,8 @@ import com.derteuffel.archive.domain.Archive;
 import com.derteuffel.archive.domain.Compte;
 import com.derteuffel.archive.domain.Role;
 import com.derteuffel.archive.helpers.CountryDetails;
+import com.derteuffel.archive.helpers.exceptions.HttpServiceExceptionHandle;
+import com.derteuffel.archive.helpers.utils.HttpErrorMessage;
 import com.derteuffel.archive.repositories.ArchiveRepository;
 import com.derteuffel.archive.repositories.CompteRepository;
 import com.derteuffel.archive.repositories.RoleRepository;
@@ -13,6 +15,7 @@ import com.derteuffel.archive.services.CompteService;
 import com.derteuffel.archive.services.Multipart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -51,110 +54,135 @@ public class ArchiveController {
 
 
     @GetMapping("/home")
-    public String home(Model model, HttpServletRequest request){
-        List<Archive> lists = archiveRepository.findAll(Sort.by(Sort.Direction.DESC,"id"));
-        Principal principal = request.getUserPrincipal();
-        Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
-        Role role = roleRepository.findByName("ROLE_USER");
-        model.addAttribute("lists",lists);
-        model.addAttribute("compte",compte);
-        model.addAttribute("archive",new Archive());
-        if (compte.getRoles().contains(role)){
-            return "redirect:/archive/lists";
+    public ResponseEntity<?> home(HttpServletRequest request){
+        try {
+            List<Archive> lists = archiveRepository.findAll(Sort.by(Sort.Direction.DESC,"id"));
+            Principal principal = request.getUserPrincipal();
+            Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
+            Role role = roleRepository.findByName("ROLE_USER");
+            return new ResponseEntity<>(lists, HttpStatus.OK);
+        }catch (HttpServiceExceptionHandle e){
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
         }
-        return "index";
+
+
+
     }
 
     @GetMapping("/lists")
-    public String archives(Model model, HttpServletRequest request){
-        Principal principal = request.getUserPrincipal();
-        Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
-        List<Archive> lists = archiveRepository.findAllByCompte_Id(compte.getId());
-        model.addAttribute("lists",lists);
-        model.addAttribute("compte",compte);
-        model.addAttribute("archive",new Archive());
-        model.addAttribute("departements",countryDetails.getDivisions());
-        return "index";
+    public ResponseEntity<?> archives(HttpServletRequest request){
+
+        try {
+            Principal principal = request.getUserPrincipal();
+            Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
+            List<Archive> lists = archiveRepository.findAllByCompte_Id(compte.getId());
+            return new ResponseEntity<>(lists, HttpStatus.OK);
+
+        }catch (HttpServiceExceptionHandle e){
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
+        }
+
+
+
     }
 
     @GetMapping("/lists/nature/{natureDocument}")
-    public String archiveSearchByNature(Model model, HttpServletRequest request,@PathVariable String natureDocument){
-        Principal principal = request.getUserPrincipal();
-        Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
-        List<Archive> lists = archiveRepository.findAllByNatureDocument(natureDocument,Sort.by(Sort.Direction.DESC,"id"));
-        model.addAttribute("lists",lists);
-        model.addAttribute("compte",compte);
-        model.addAttribute("archive",new Archive());
-        model.addAttribute("departements",countryDetails.getDivisions());
-        return "index";
+    public  ResponseEntity<?> archiveSearchByNature( HttpServletRequest request,@PathVariable String natureDocument){
+        try {
+            Principal principal = request.getUserPrincipal();
+            Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
+            List<Archive> lists = archiveRepository.findAllByNatureDocument(natureDocument,Sort.by(Sort.Direction.DESC,"id"));
+
+            return new ResponseEntity<>(lists, HttpStatus.OK);
+        }catch (HttpServiceExceptionHandle e){
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
+        }
+
     }
 
     @GetMapping("/lists/age/{age}")
-    public String archiveSearchByAge(Model model, HttpServletRequest request,@PathVariable String age){
-        Principal principal = request.getUserPrincipal();
-        Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
-        List<Archive> lists = archiveRepository.findAllByAge(age,Sort.by(Sort.Direction.DESC,"id"));
-        model.addAttribute("lists",lists);
-        model.addAttribute("compte",compte);
-        model.addAttribute("archive",new Archive());
-        model.addAttribute("departements",countryDetails.getDivisions());
-        return "index";
+    public ResponseEntity<?> archiveSearchByAge(Model model, HttpServletRequest request,@PathVariable String age){
+        try {
+            Principal principal = request.getUserPrincipal();
+            Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
+            List<Archive> lists = archiveRepository.findAllByAge(age,Sort.by(Sort.Direction.DESC,"id"));
+            return new ResponseEntity<>(lists, HttpStatus.OK);
+        }catch (HttpServiceExceptionHandle e){
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
+
+        }
+
     }
 
 
 
     @PostMapping("/save")
-    public String archiveSave(Archive archive, RedirectAttributes redirectAttributes, HttpServletRequest request, @RequestParam("files") MultipartFile[] files){
+    public ResponseEntity<?> archiveSave(Archive archive, RedirectAttributes redirectAttributes, HttpServletRequest request, @RequestParam("files") MultipartFile[] files){
 
-        Principal principal = request.getUserPrincipal();
-        Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
-        if (files.length != 0){
-            for (MultipartFile file : files){
-                multipart.store(file);
-                if (archive.getPieces().size() == 0){
-                    archive.setPieces(new ArrayList<String>(Collections.singleton("/downloadFile/" + file.getOriginalFilename())));
-                }else {
-                    archive.getPieces().add("/downloadFile/"+file.getOriginalFilename());
+        try {
+            Principal principal = request.getUserPrincipal();
+            Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
+            if (files.length != 0){
+                for (MultipartFile file : files){
+                    multipart.store(file);
+                    if (archive.getPieces().size() == 0){
+                        archive.setPieces(new ArrayList<String>(Collections.singleton("/downloadFile/" + file.getOriginalFilename())));
+                    }else {
+                        archive.getPieces().add("/downloadFile/"+file.getOriginalFilename());
+                    }
                 }
             }
+
+            archive.setCode("#"+archive.getNatureDocument().substring(0,2).toUpperCase()+"/"+archive.getService().substring(0,3).toUpperCase()+"/"+archiveRepository.findAll().size());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            Date date = new Date();
+            archive.setDateEnregistrement(sdf.format(date));
+            archive.setCompte(compte);
+
+            redirectAttributes.addFlashAttribute("success","Operation reussie");
+            return new ResponseEntity<>(archiveRepository.save(archive), HttpStatus.OK);
+
+        }catch (HttpServiceExceptionHandle e){
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
+
         }
 
-        archive.setCode("#"+archive.getNatureDocument().substring(0,2).toUpperCase()+"/"+archive.getService().substring(0,3).toUpperCase()+"/"+archiveRepository.findAll().size());
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Date date = new Date();
-        archive.setDateEnregistrement(sdf.format(date));
-        archive.setCompte(compte);
-        archiveRepository.save(archive);
-        redirectAttributes.addFlashAttribute("success","Operation reussie");
-        return "redirect:/archive/home";
     }
 
     @GetMapping("/detail/{id}")
-    public String archiveDetail(@PathVariable Long id, Model model, HttpServletRequest request){
-        Principal principal = request.getUserPrincipal();
-        Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
-        Archive archive = archiveRepository.getOne(id);
-        model.addAttribute("compte",compte);
-        model.addAttribute("archive",archive);
-        return "archive/detail";
+    public ResponseEntity<?> archiveDetail(@PathVariable Long id, HttpServletRequest request){
+        try {
+            Principal principal = request.getUserPrincipal();
+            Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
+            Archive archive = archiveRepository.getOne(id);
+            return new ResponseEntity<>(archive, HttpStatus.OK);
+
+        }catch (HttpServiceExceptionHandle e){
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
+
+        }
     }
 
     @GetMapping("/update/{id}")
-    public String archiveUpdate(@PathVariable Long id, Model model, HttpServletRequest request){
-        Principal principal = request.getUserPrincipal();
-        Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
-        Archive archive = archiveRepository.getOne(id);
-        model.addAttribute("compte",compte);
-        model.addAttribute("archive",archive);
-        model.addAttribute("departements",countryDetails.getDivisions());
-        return "archive/update";
+    public ResponseEntity<?> archiveUpdate(@PathVariable Long id,HttpServletRequest request){
+        try {
+            Principal principal = request.getUserPrincipal();
+            Compte compte = compteService.findByUsernameOrEmail(principal.getName(),principal.getName());
+            Archive archive = archiveRepository.getOne(id);
+            return new ResponseEntity<>(archive, HttpStatus.OK);
+
+        }catch (HttpServiceExceptionHandle e){
+            return new ResponseEntity<>(new HttpErrorMessage(new Date(), e.getMessage()), HttpStatus.valueOf(e.getErrorCode()));
+
+        }
+
     }
 
     @GetMapping("/delete/{id}")
-    public String archiveDelete(@PathVariable Long id, RedirectAttributes redirectAttributes){
-        Archive archive = archiveRepository.getOne(id);
-        archiveRepository.delete(archive);
-        redirectAttributes.addFlashAttribute("success","Suppression reussie");
-        return "redirect:/archive/home";
+    public void archiveDelete(@PathVariable Long id, RedirectAttributes redirectAttributes){
+            Archive archive = archiveRepository.getOne(id);
+            redirectAttributes.addFlashAttribute("success","Suppression reussie");
+            archiveRepository.delete(archive);
+
     }
 }

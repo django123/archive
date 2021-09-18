@@ -159,7 +159,7 @@ public class SecteurController {
     }
 
     @GetMapping("/archive/lists/{id}")
-    public ResponseEntity<?> archiveSearchByAge(Model model, HttpServletRequest request,@PathVariable Long id){
+    public ResponseEntity<?> archiveSearchByAge( HttpServletRequest request,@PathVariable Long id){
 
         try {
             Principal principal = request.getUserPrincipal();
