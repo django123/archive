@@ -22,94 +22,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0785ea71-09ff-4bd0-972d-f8c20ec23e45" name="Default Changelist" comment="api coté ArchiveController">
-      <change afterPath="$PROJECT_DIR$/archive-controllers/src/main/java/com/derteuffel/archive/controllers/FileUploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive-helpers/src/main/java/com/derteuffel/archive/helpers/FileStorageProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive-helpers/src/main/java/com/derteuffel/archive/helpers/FileUploadHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive-helpers/src/main/java/com/derteuffel/archive/helpers/exceptions/FileStorageException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive-helpers/src/main/java/com/derteuffel/archive/helpers/exceptions/MyFileNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/archive-service/src/main/java/com/derteuffel/archive/services/FileStorageService.java" afterDir="false" />
+    <list default="true" id="0785ea71-09ff-4bd0-972d-f8c20ec23e45" name="Default Changelist" comment="file service">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_auth0_java_jwt_3_18_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive-controllers/src/main/java/com/derteuffel/archive/controllers/api/UserResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive-domain/src/main/java/com/derteuffel/archive/domain/dto/RoleToUserForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive-security/src/main/java/com/derteuffel/archive/security/filter/CustomAuthentificationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive-security/src/main/java/com/derteuffel/archive/security/filter/CustomeAuthorizationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-app/target/classes/com/derteuffel/archives/ArchiveApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-controllers/src/main/java/com/derteuffel/archive/controllers/SecteurController.java" beforeDir="false" afterPath="$PROJECT_DIR$/archive-controllers/src/main/java/com/derteuffel/archive/controllers/SecteurController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-controllers/target/classes/META-INF/archive-controllers.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-controllers/target/classes/com/derteuffel/archive/controllers/ArchiveController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-controllers/target/classes/com/derteuffel/archive/controllers/DirectionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-controllers/target/classes/com/derteuffel/archive/controllers/SecteurController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/AbstractPersistence.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/Archive.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/Compte.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/Direction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/Secteur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-domain/target/classes/com/derteuffel/archive/domain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-enums/target/classes/com/derteuffel/archive/enums/EAgeDocument.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-enums/target/classes/com/derteuffel/archive/enums/ENatureDocument.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-enums/target/classes/com/derteuffel/archive/enums/ERole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/CountryDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/UserDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/ApiError$ApiSubError.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/ApiError$ApiValidationError.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/ApiError.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/AppExceptionsHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/EntityNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/HttpServiceExceptionHandle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/LowerCaseClassNameResolver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/MyExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/exceptions/RestExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/utils/HttpErrorCodes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-helpers/target/classes/com/derteuffel/archive/helpers/utils/HttpErrorMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-repositories/target/classes/com/derteuffel/archive/repositories/ArchiveRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-repositories/target/classes/com/derteuffel/archive/repositories/CompteRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-repositories/target/classes/com/derteuffel/archive/repositories/DirectionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-repositories/target/classes/com/derteuffel/archive/repositories/RoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-repositories/target/classes/com/derteuffel/archive/repositories/SecteurRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-repositories/target/classes/com/derteuffel/archive/repositories/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-security/target/classes/com/derteuffel/archive/security/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-security/target/classes/com/derteuffel/archive/security/WebConfig$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-security/target/classes/com/derteuffel/archive/security/WebConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/CompteService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/CompteServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/DirectionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/DirectionServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/Multipart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/SecteurService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive-service/target/classes/com/derteuffel/archive/services/SecteurServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/ArchivesApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/controllers/ArchiveController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/controllers/DirectionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/controllers/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/controllers/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/controllers/SecteurController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/controllers/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/entities/Archive.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/entities/Compte.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/entities/Direction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/entities/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/entities/Secteur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/entities/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/enums/EAgeDocument.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/enums/ENatureDocument.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/enums/ERole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/helpers/CountryDetails.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/helpers/UserDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/repositories/ArchiveRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/repositories/CompteRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/repositories/DirectionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/repositories/RoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/repositories/SecteurRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/repositories/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/security/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/security/WebConfig$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/security/WebConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/CompteService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/CompteServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/DirectionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/DirectionServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/Multipart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/SecteurService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/derteuffel/archives/services/SecteurServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/derteuffel/archives/ArchivesApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-app/archive-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/archive-app/archive-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-controllers/archive-controllers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/archive-controllers/archive-controllers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-domain/archive-domain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/archive-domain/archive-domain.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-domain/src/main/java/com/derteuffel/archive/domain/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/archive-domain/src/main/java/com/derteuffel/archive/domain/Compte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-enums/archive-enums.iml" beforeDir="false" afterPath="$PROJECT_DIR$/archive-enums/archive-enums.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-helpers/archive-helpers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/archive-helpers/archive-helpers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-repositories/archive-repositories.iml" beforeDir="false" afterPath="$PROJECT_DIR$/archive-repositories/archive-repositories.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-repositories/src/main/java/com/derteuffel/archive/repositories/CompteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/archive-repositories/src/main/java/com/derteuffel/archive/repositories/CompteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-security/archive-security.iml" beforeDir="false" afterPath="$PROJECT_DIR$/archive-security/archive-security.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-security/src/main/java/com/derteuffel/archive/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/archive-security/src/main/java/com/derteuffel/archive/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-security/src/main/java/com/derteuffel/archive/security/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-service/archive-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/archive-service/archive-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-service/src/main/java/com/derteuffel/archive/services/CompteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/archive-service/src/main/java/com/derteuffel/archive/services/CompteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive-service/src/main/java/com/derteuffel/archive/services/CompteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/archive-service/src/main/java/com/derteuffel/archive/services/CompteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archives.iml" beforeDir="false" afterPath="$PROJECT_DIR$/archives.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,12 +64,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1eOI32PlSFFrhEZTEx83qUM7Gs0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -165,12 +100,8 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates/secteur/archives" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.derteuffel.archive.services" />
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.derteuffel.archive.security.filter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/archive-app/src/main/resources" />
@@ -178,6 +109,13 @@
       <recent name="$PROJECT_DIR$/archive-security/src/main/java/com/derteuffel/archive/security" />
       <recent name="$PROJECT_DIR$/archive-service/src/main/java/com/derteuffel/archive/services" />
       <recent name="$PROJECT_DIR$/archive-helpers/src/main/java/com/derteuffel/archive/helpers" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.derteuffel.archive.services" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/secteur/archives" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -246,7 +184,9 @@
       <workItem from="1631632744663" duration="875000" />
       <workItem from="1631638289007" duration="139000" />
       <workItem from="1631641411952" duration="6644000" />
-      <workItem from="1631996671970" duration="3350000" />
+      <workItem from="1631996671970" duration="3916000" />
+      <workItem from="1632040194347" duration="1634000" />
+      <workItem from="1632255851610" duration="3524000" />
     </task>
     <task id="LOCAL-00001" summary="adding user manae in">
       <created>1629820836676</created>
@@ -283,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631998321660</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="file service">
+      <created>1632000366390</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1632000366390</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,68 +254,80 @@
     <MESSAGE value="decoupage en module" />
     <MESSAGE value="mise en place des exception revue des service et de api restfull et suppression de certain fichiers" />
     <MESSAGE value="api coté ArchiveController" />
-    <option name="LAST_COMMIT_MESSAGE" value="api coté ArchiveController" />
+    <MESSAGE value="file service" />
+    <option name="LAST_COMMIT_MESSAGE" value="file service" />
   </component>
   <component name="WindowStateProjectService">
     <state x="354" y="109" key="#Inspections" timestamp="1631465659050">
       <screen x="0" y="25" width="1440" height="806" />
     </state>
     <state x="354" y="109" key="#Inspections/0.25.1440.806@0.25.1440.806" timestamp="1631465659050" />
-    <state x="2174" y="213" key="#com.intellij.ide.util.MemberChooser" timestamp="1631200149218">
-      <screen x="1440" y="25" width="1920" height="1055" />
+    <state x="551" y="168" key="#com.intellij.ide.util.MemberChooser" timestamp="1632259993662">
+      <screen x="0" y="25" width="1440" height="803" />
     </state>
+    <state x="551" y="168" key="#com.intellij.ide.util.MemberChooser/0.25.1440.803@0.25.1440.803" timestamp="1632259993662" />
+    <state x="551" y="168" key="#com.intellij.ide.util.MemberChooser/0.25.1440.805@0.25.1440.805" timestamp="1632256485490" />
     <state x="2174" y="213" key="#com.intellij.ide.util.MemberChooser/0.25.1440.875/1440.25.1920.1055@1440.25.1920.1055" timestamp="1631200149218" />
-    <state width="1196" height="238" key="GridCell.Tab.0.bottom" timestamp="1631467741630">
-      <screen x="0" y="25" width="1440" height="805" />
+    <state width="561" height="285" key="GridCell.Tab.0.bottom" timestamp="1632042278936">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="561" height="285" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1632042278936" />
     <state width="1196" height="238" key="GridCell.Tab.0.bottom/0.25.1440.805@0.25.1440.805" timestamp="1631467741630" />
     <state width="1196" height="238" key="GridCell.Tab.0.bottom/0.25.1440.806@0.25.1440.806" timestamp="1631465732898" />
     <state width="1196" height="238" key="GridCell.Tab.0.bottom/0.25.1440.808@0.25.1440.808" timestamp="1631464928645" />
-    <state width="1196" height="238" key="GridCell.Tab.0.center" timestamp="1631467741630">
-      <screen x="0" y="25" width="1440" height="805" />
+    <state width="561" height="285" key="GridCell.Tab.0.center" timestamp="1632042278934">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="561" height="285" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1632042278934" />
     <state width="1196" height="238" key="GridCell.Tab.0.center/0.25.1440.805@0.25.1440.805" timestamp="1631467741630" />
     <state width="1196" height="238" key="GridCell.Tab.0.center/0.25.1440.806@0.25.1440.806" timestamp="1631465732897" />
     <state width="1196" height="238" key="GridCell.Tab.0.center/0.25.1440.808@0.25.1440.808" timestamp="1631464928645" />
-    <state width="1196" height="238" key="GridCell.Tab.0.left" timestamp="1631467741630">
-      <screen x="0" y="25" width="1440" height="805" />
+    <state width="561" height="285" key="GridCell.Tab.0.left" timestamp="1632042278930">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="561" height="285" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1632042278930" />
     <state width="1196" height="238" key="GridCell.Tab.0.left/0.25.1440.805@0.25.1440.805" timestamp="1631467741630" />
     <state width="1196" height="238" key="GridCell.Tab.0.left/0.25.1440.806@0.25.1440.806" timestamp="1631465732896" />
     <state width="1196" height="238" key="GridCell.Tab.0.left/0.25.1440.808@0.25.1440.808" timestamp="1631464928644" />
-    <state width="1196" height="238" key="GridCell.Tab.0.right" timestamp="1631467741630">
-      <screen x="0" y="25" width="1440" height="805" />
+    <state width="561" height="285" key="GridCell.Tab.0.right" timestamp="1632042278935">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="561" height="285" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1632042278935" />
     <state width="1196" height="238" key="GridCell.Tab.0.right/0.25.1440.805@0.25.1440.805" timestamp="1631467741630" />
     <state width="1196" height="238" key="GridCell.Tab.0.right/0.25.1440.806@0.25.1440.806" timestamp="1631465732897" />
     <state width="1196" height="238" key="GridCell.Tab.0.right/0.25.1440.808@0.25.1440.808" timestamp="1631464928645" />
-    <state width="1196" height="238" key="GridCell.Tab.1.bottom" timestamp="1631467741631">
-      <screen x="0" y="25" width="1440" height="805" />
+    <state width="561" height="285" key="GridCell.Tab.1.bottom" timestamp="1632042278938">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="561" height="285" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1632042278938" />
     <state width="1196" height="238" key="GridCell.Tab.1.bottom/0.25.1440.805@0.25.1440.805" timestamp="1631467741631" />
     <state width="1196" height="238" key="GridCell.Tab.1.bottom/0.25.1440.806@0.25.1440.806" timestamp="1631465732900" />
     <state width="1196" height="238" key="GridCell.Tab.1.bottom/0.25.1440.808@0.25.1440.808" timestamp="1631464928647" />
-    <state width="1196" height="238" key="GridCell.Tab.1.center" timestamp="1631467741631">
-      <screen x="0" y="25" width="1440" height="805" />
+    <state width="561" height="285" key="GridCell.Tab.1.center" timestamp="1632042278937">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="561" height="285" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1632042278937" />
     <state width="1196" height="238" key="GridCell.Tab.1.center/0.25.1440.805@0.25.1440.805" timestamp="1631467741631" />
     <state width="1196" height="238" key="GridCell.Tab.1.center/0.25.1440.806@0.25.1440.806" timestamp="1631465732899" />
     <state width="1196" height="238" key="GridCell.Tab.1.center/0.25.1440.808@0.25.1440.808" timestamp="1631464928646" />
-    <state width="1196" height="238" key="GridCell.Tab.1.left" timestamp="1631467741631">
-      <screen x="0" y="25" width="1440" height="805" />
+    <state width="561" height="285" key="GridCell.Tab.1.left" timestamp="1632042278936">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="561" height="285" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1632042278936" />
     <state width="1196" height="238" key="GridCell.Tab.1.left/0.25.1440.805@0.25.1440.805" timestamp="1631467741631" />
     <state width="1196" height="238" key="GridCell.Tab.1.left/0.25.1440.806@0.25.1440.806" timestamp="1631465732898" />
     <state width="1196" height="238" key="GridCell.Tab.1.left/0.25.1440.808@0.25.1440.808" timestamp="1631464928646" />
-    <state width="1196" height="238" key="GridCell.Tab.1.right" timestamp="1631467741631">
-      <screen x="0" y="25" width="1440" height="805" />
+    <state width="561" height="285" key="GridCell.Tab.1.right" timestamp="1632042278938">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="561" height="285" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1632042278938" />
     <state width="1196" height="238" key="GridCell.Tab.1.right/0.25.1440.805@0.25.1440.805" timestamp="1631467741631" />
     <state width="1196" height="238" key="GridCell.Tab.1.right/0.25.1440.806@0.25.1440.806" timestamp="1631465732900" />
     <state width="1196" height="238" key="GridCell.Tab.1.right/0.25.1440.808@0.25.1440.808" timestamp="1631464928647" />
-    <state x="344" y="147" key="Maven.ArtifactSearchDialog" timestamp="1631643240359">
-      <screen x="0" y="25" width="1440" height="806" />
+    <state x="344" y="146" key="Maven.ArtifactSearchDialog" timestamp="1632260096628">
+      <screen x="0" y="25" width="1440" height="803" />
     </state>
+    <state x="344" y="146" key="Maven.ArtifactSearchDialog/0.25.1440.803@0.25.1440.803" timestamp="1632260096628" />
     <state x="344" y="147" key="Maven.ArtifactSearchDialog/0.25.1440.806@0.25.1440.806" timestamp="1631643240359" />
     <state x="344" y="148" key="Maven.ArtifactSearchDialog/0.25.1440.810@0.25.1440.810" timestamp="1631632500432" />
     <state x="344" y="148" key="Maven.ArtifactSearchDialog/0.25.1440.813@0.25.1440.813" timestamp="1631631419398" />
